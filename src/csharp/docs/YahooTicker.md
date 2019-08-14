@@ -1,4 +1,4 @@
-# IO.Swagger.Model.YahooTicker
+# YahooFinance.SearchTerm.Model.YahooTicker
 ## Properties
 
 Name | Type | Description | Notes

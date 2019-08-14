@@ -1,4 +1,4 @@
-# IO.Swagger.Model.SearchResponse
+# YahooFinance.SearchTerm.Model.SearchResponse
 ## Properties
 
 Name | Type | Description | Notes

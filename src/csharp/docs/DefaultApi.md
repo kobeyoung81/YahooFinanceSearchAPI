@@ -1,6 +1,6 @@
-# IO.Swagger.Api.DefaultApi
+# YahooFinance.SearchTerm.Api.DefaultApi
 
-All URIs are relative to *https://virtserver.swaggerhub.com/kobeyoung81/YahooFinance/1.0.0*
+All URIs are relative to *https://finance.yahoo.com/_finance_doubledown/api/resource*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,9 +18,9 @@ By passing in the appropriate options, you can search for available inventory in
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using YahooFinance.SearchTerm.Api;
+using YahooFinance.SearchTerm.Client;
+using YahooFinance.SearchTerm.Model;
 
 namespace Example
 {
