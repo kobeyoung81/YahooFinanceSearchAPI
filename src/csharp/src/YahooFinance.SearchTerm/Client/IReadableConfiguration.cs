@@ -1,7 +1,7 @@
 /* 
- * Yahoo Finance Term Search API
+ * Yahoo Finance API
  *
- * This is the API from yahoo finance to search for symbols.
+ * This is the API from yahoo finance to search for symbols and get quotes.
  *
  * OpenAPI spec version: 1.0.0
  * Contact: kobeyoung81@gmail.com
