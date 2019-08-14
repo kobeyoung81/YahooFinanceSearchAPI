@@ -24,6 +24,27 @@ namespace YahooFinance.SearchTerm.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// get quote for symbol
+        /// </summary>
+        /// <remarks>
+        /// By passing in the appropriate options, you can search for available inventory in the system 
+        /// </remarks>
+        /// <exception cref="YahooFinance.SearchTerm.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbols">pass an optional search string for looking up inventory</param>
+        /// <returns>QuoteResponseContent</returns>
+        QuoteResponseContent GetQuote (string symbols);
+
+        /// <summary>
+        /// get quote for symbol
+        /// </summary>
+        /// <remarks>
+        /// By passing in the appropriate options, you can search for available inventory in the system 
+        /// </remarks>
+        /// <exception cref="YahooFinance.SearchTerm.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbols">pass an optional search string for looking up inventory</param>
+        /// <returns>ApiResponse of QuoteResponseContent</returns>
+        ApiResponse<QuoteResponseContent> GetQuoteWithHttpInfo (string symbols);
+        /// <summary>
         /// searches tickers
         /// </summary>
         /// <remarks>
@@ -46,6 +67,27 @@ namespace YahooFinance.SearchTerm.Api
         ApiResponse<List<SearchResponse>> SearchTermWithHttpInfo (string term);
         #endregion Synchronous Operations
         #region Asynchronous Operations
+        /// <summary>
+        /// get quote for symbol
+        /// </summary>
+        /// <remarks>
+        /// By passing in the appropriate options, you can search for available inventory in the system 
+        /// </remarks>
+        /// <exception cref="YahooFinance.SearchTerm.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbols">pass an optional search string for looking up inventory</param>
+        /// <returns>Task of QuoteResponseContent</returns>
+        System.Threading.Tasks.Task<QuoteResponseContent> GetQuoteAsync (string symbols);
+
+        /// <summary>
+        /// get quote for symbol
+        /// </summary>
+        /// <remarks>
+        /// By passing in the appropriate options, you can search for available inventory in the system 
+        /// </remarks>
+        /// <exception cref="YahooFinance.SearchTerm.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbols">pass an optional search string for looking up inventory</param>
+        /// <returns>Task of ApiResponse (QuoteResponseContent)</returns>
+        System.Threading.Tasks.Task<ApiResponse<QuoteResponseContent>> GetQuoteAsyncWithHttpInfo (string symbols);
         /// <summary>
         /// searches tickers
         /// </summary>
@@ -176,6 +218,137 @@ namespace YahooFinance.SearchTerm.Api
         public void AddDefaultHeader(string key, string value)
         {
             this.Configuration.AddDefaultHeader(key, value);
+        }
+
+        /// <summary>
+        /// get quote for symbol By passing in the appropriate options, you can search for available inventory in the system 
+        /// </summary>
+        /// <exception cref="YahooFinance.SearchTerm.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbols">pass an optional search string for looking up inventory</param>
+        /// <returns>QuoteResponseContent</returns>
+        public QuoteResponseContent GetQuote (string symbols)
+        {
+             ApiResponse<QuoteResponseContent> localVarResponse = GetQuoteWithHttpInfo(symbols);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// get quote for symbol By passing in the appropriate options, you can search for available inventory in the system 
+        /// </summary>
+        /// <exception cref="YahooFinance.SearchTerm.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbols">pass an optional search string for looking up inventory</param>
+        /// <returns>ApiResponse of QuoteResponseContent</returns>
+        public ApiResponse< QuoteResponseContent > GetQuoteWithHttpInfo (string symbols)
+        {
+            // verify the required parameter 'symbols' is set
+            if (symbols == null)
+                throw new ApiException(400, "Missing required parameter 'symbols' when calling DefaultApi->GetQuote");
+
+            var localVarPath = "./quote";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (symbols != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbols", symbols)); // query parameter
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetQuote", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<QuoteResponseContent>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
+                (QuoteResponseContent) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(QuoteResponseContent)));
+        }
+
+        /// <summary>
+        /// get quote for symbol By passing in the appropriate options, you can search for available inventory in the system 
+        /// </summary>
+        /// <exception cref="YahooFinance.SearchTerm.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbols">pass an optional search string for looking up inventory</param>
+        /// <returns>Task of QuoteResponseContent</returns>
+        public async System.Threading.Tasks.Task<QuoteResponseContent> GetQuoteAsync (string symbols)
+        {
+             ApiResponse<QuoteResponseContent> localVarResponse = await GetQuoteAsyncWithHttpInfo(symbols);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// get quote for symbol By passing in the appropriate options, you can search for available inventory in the system 
+        /// </summary>
+        /// <exception cref="YahooFinance.SearchTerm.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="symbols">pass an optional search string for looking up inventory</param>
+        /// <returns>Task of ApiResponse (QuoteResponseContent)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<QuoteResponseContent>> GetQuoteAsyncWithHttpInfo (string symbols)
+        {
+            // verify the required parameter 'symbols' is set
+            if (symbols == null)
+                throw new ApiException(400, "Missing required parameter 'symbols' when calling DefaultApi->GetQuote");
+
+            var localVarPath = "./quote";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (symbols != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "symbols", symbols)); // query parameter
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetQuote", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<QuoteResponseContent>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
+                (QuoteResponseContent) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(QuoteResponseContent)));
         }
 
         /// <summary>

@@ -48,17 +48,17 @@ namespace Example
         public void main()
         {
             var apiInstance = new DefaultApi();
-            var term = term_example;  // string | pass an optional search string for looking up inventory
+            var symbols = symbols_example;  // string | pass an optional search string for looking up inventory
 
             try
             {
-                // searches tickers
-                List<SearchResponse> result = apiInstance.SearchTerm(term);
+                // get quote for symbol
+                QuoteResponseContent result = apiInstance.GetQuote(symbols);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling DefaultApi.SearchTerm: " + e.Message );
+                Debug.Print("Exception when calling DefaultApi.GetQuote: " + e.Message );
             }
         }
     }
@@ -72,12 +72,16 @@ All URIs are relative to *https://finance.yahoo.com/_finance_doubledown/api/reso
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*DefaultApi* | [**GetQuote**](docs/DefaultApi.md#getquote) | **GET** /quote | get quote for symbol
 *DefaultApi* | [**SearchTerm**](docs/DefaultApi.md#searchterm) | **GET** /searchassist;searchTerm&#x3D;{term} | searches tickers
 
 <a name="documentation-for-models"></a>
 ## Documentation for Models
 
+ - [Model.QuoteResponseContent](docs/QuoteResponseContent.md)
+ - [Model.QuoteResponseContentQuoteResponse](docs/QuoteResponseContentQuoteResponse.md)
  - [Model.SearchResponse](docs/SearchResponse.md)
+ - [Model.YahooQuote](docs/YahooQuote.md)
  - [Model.YahooTicker](docs/YahooTicker.md)
 
 <a name="documentation-for-authorization"></a>
