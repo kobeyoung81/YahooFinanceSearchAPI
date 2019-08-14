@@ -12,7 +12,7 @@ Contact: kobeyoung81@gmail.com
     <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7A1DF2BD-8D69-4800-AE85-E9DF375B588F}</ProjectGuid>
+    <ProjectGuid>{B36E14BF-8D74-4418-9FB9-3C5445850F3A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>YahooFinance.SearchTerm</RootNamespace>
