@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-Yahoo Finance API
+Yahoo Finance Search API
 
-This is the API from yahoo finance to search for symbols and get quotes.
+This is the API from yahoo finance to search for symbols.
 
 OpenAPI spec version: 1.0.0
 Contact: kobeyoung81@gmail.com
@@ -12,7 +12,7 @@ Contact: kobeyoung81@gmail.com
     <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B36E14BF-8D74-4418-9FB9-3C5445850F3A}</ProjectGuid>
+    <ProjectGuid>{835EE4E9-B0D4-4EF9-9FD7-45C613FA9615}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>YahooFinance.SearchTerm</RootNamespace>
